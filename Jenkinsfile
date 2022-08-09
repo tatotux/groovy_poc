@@ -63,7 +63,7 @@ pipeline {
                               stage("Stage ${key}") {
                                   catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                                       def testsList = (params.FEATURES!=null) ? params.FEATURES : map[key].join(',')
-                                      sh "npx cypress run --browser=${BROWSER} --spec=${testsList}"  
+                                      sh "npx cypress run --spec=${testsList}"  
                                   }
                               }
                           }
