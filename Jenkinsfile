@@ -48,7 +48,7 @@ pipeline {
     stages {
         stage('Setup up environment') {
             steps {
-                sh 'npm intall'
+                sh 'npm install'
             }
         }
         stage('Cypress execution') {
