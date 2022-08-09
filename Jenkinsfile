@@ -86,8 +86,7 @@ pipeline {
         }
         stage('Post Building Action') {
             steps {
-                    archiveArtifacts artifacts: '**/*.png', allowEmptyArchive: true, fingerprint: true
-                    archiveArtifacts artifacts: '**/*.mp4', allowEmptyArchive: true, fingerprint: true
+                archiveArtifacts artifacts: '**/*.png', allowEmptyArchive: true, fingerprint: true
             }
         }
     }
