@@ -5,7 +5,7 @@ def deploymentStages = [:]
  * This function reads the list of specs and sends
    that list to funciton "assignFeatureToMachine"
  */
-def getSpecGroupsToRun() {
+def getSpecsGroupsToRun() {
     def numMachines = "${CONTAINERS}".toInteger()
     def list = sh(script: "find cypress/e2e/**/*cy.js -name '*cy.js' -print0 | xargs -0 | tr  ' ' ,", returnStdout: true)
     def map = assignSpecsToMachine(numMachines, list)
