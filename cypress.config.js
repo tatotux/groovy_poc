@@ -4,6 +4,7 @@ module.exports = defineConfig({
   e2e: {
     video: false,
     setupNodeEvents(on, config) {
+      AllureWriter(on, config);
         on('before:browser:launch', (browser = {}, launchOptions) => {
           // `args` is an array of all the arguments that will
           // be passed to browsers when it launches
