@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
   e2e: {
@@ -24,7 +25,7 @@ module.exports = defineConfig({
           // whatever you return here becomes the launchOptions
           return launchOptions
         })
-        AllureWriter(on, config);
+        allureWriter(on, config);
         return config;
     },
   },

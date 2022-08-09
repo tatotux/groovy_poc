@@ -45,6 +45,9 @@ pipeline {
             label 'linuxvm'
         }
     }
+    options {
+        ansiColor('xterm')
+    }
     stages {
         stage('Setup up environment') {
             steps {
