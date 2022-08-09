@@ -63,11 +63,7 @@ pipeline {
                               stage("Stage ${key}") {
                                   catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                                       def testsList = (params.FEATURES!=null) ? params.FEATURES : map[key].join(',')
-                                      container("executionvm-${key}") {
-                                          dir("${env.WORKSPACE}/UI") {
-                                              sh "npx cypress run --testbrowser=${BROWSER} --spec=${testsList}"
-                                          }
-                                      }
+                                      sh "npx cypress run --testbrowser=${BROWSER} --spec=${testsList}"  
                                   }
                               }
                           }
